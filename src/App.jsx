@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -9,7 +9,7 @@ import ContactForm from "./components/ContactForm";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Navbar />
       <div className="container mt-4">
         <Routes>
@@ -21,6 +21,6 @@ export default function App() {
           <Route path="/contact" element={<ContactForm />} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
