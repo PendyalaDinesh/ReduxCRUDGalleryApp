@@ -10,16 +10,18 @@ import ContactForm from "./components/ContactForm";
 export default function App() {
   return (
     <Router>
-      <Navbar />
-      <div className="container mt-4">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/redux" element={<TodoRedux />} />
-          <Route path="/crud" element={<CrudAxios />} />
-          <Route path="/gallery" element={<PhotoGallery />} />
-          <Route path="/contact" element={<ContactForm />} />
-        </Routes>
+      <div className="app">
+        <Navbar />
+        <div className="container mt-4">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/redux" element={<TodoRedux />} />
+            <Route path="/crud" element={<CrudAxios />} />
+            <Route path="/gallery" element={<PhotoGallery />} />
+            <Route path="/contact" element={<ContactForm />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );
