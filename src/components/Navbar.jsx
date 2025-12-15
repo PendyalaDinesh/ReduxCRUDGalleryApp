@@ -1,19 +1,26 @@
-import { Link } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import TodoRedux from "./components/TodoRedux";
+import CrudAxios from "./components/CrudAxios";
+import PhotoGallery from "./components/PhotoGallery";
+import ContactForm from "./components/ContactForm";
 
-export default function Navbar() {
+export default function App() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container">
-        <Link className="navbar-brand" to="/">ReduxCRUDGalleryApp</Link>
-        <div className="navbar-nav"> 
-          <Link className="nav-link" to="/">Home</Link>
-          <Link className="nav-link" to="/about">About</Link>
-          <Link className="nav-link" to="/redux">Redux</Link>
-          <Link className="nav-link" to="/crud">CRUD</Link>
-          <Link className="nav-link" to="/gallery">Gallery</Link>
-          <Link className="nav-link" to="/contact">Contact</Link>
-        </div>
+    <Router>
+      <Navbar />
+      <div className="container mt-4">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/redux" element={<TodoRedux />} />
+          <Route path="/crud" element={<CrudAxios />} />
+          <Route path="/gallery" element={<PhotoGallery />} />
+          <Route path="/contact" element={<ContactForm />} />
+        </Routes>
       </div>
-    </nav>
+    </Router>
   );
 }
